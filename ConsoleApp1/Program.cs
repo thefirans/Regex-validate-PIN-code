@@ -13,7 +13,7 @@ namespace ConsoleApp1
         public static bool ValidatePin(string pin)
         {
             string pattern = @"\A([0-9]{4}|[0-9]{6})\z";
-            Regex regex = new Regex(pattern);           
+            Regex regex = new Regex(pattern);
             bool result = regex.IsMatch(pin);
             return result;
         }
