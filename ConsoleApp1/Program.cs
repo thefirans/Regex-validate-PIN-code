@@ -13,16 +13,9 @@ namespace ConsoleApp1
     {
         public static bool ValidatePin(string pin)
         {
-            bool result = false;
-            if (pin.Length == 4 || pin.Length == 6)
-            {
-                if (Regex.IsMatch(pin, @"[0-9]{4}{6}"))
-                {
-                    result = true;
-                }
-                else result = false;
-            }
-            else result = false;
+            string pattern = @"\A([0-9]{4}|[0-9]{6})\z";
+            Regex regex = new Regex(pattern);
+            bool result = regex.IsMatch(pin);
             return result;
         }
     }
